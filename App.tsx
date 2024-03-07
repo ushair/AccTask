@@ -6,17 +6,21 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, Text} from 'react-native';
 import Header from './components/Header';
 import SearchInput from './components/SearchInput';
 import ShopGrid from './components/ShopGrid';
+import Trending from './components/Trending';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#fafafa'}}>
       <Header />
       <SearchInput />
-      <ShopGrid />
+      <ScrollView>
+        <ShopGrid />
+        <Trending />
+      </ScrollView>
     </SafeAreaView>
   );
 }
