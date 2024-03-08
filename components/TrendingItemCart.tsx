@@ -29,7 +29,7 @@ const TrendingItemCard = ({
         </View>
         <Text style={styles.details}>{details}</Text>
         <View style={styles.infoContainer}>
-          <Icon name="heart" size={20} color="red" />
+          <Icon name="heart-outline" size={20} color="#000" />
           <Text style={styles.address}>123 Main St, Any town</Text>
         </View>
       </View>

@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 5,
     paddingHorizontal: 10,
-    paddingVertical: 5,
     borderBottomColor: '#EEEEED',
     borderBottomWidth: 0.5,
   },
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 15,
-    marginBottom: 30,
+    marginBottom: 10,
   },
   trendingText: {
     fontSize: 16,

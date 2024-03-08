@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     backgroundColor: 'transparent',
-    height: 230,
+    height: 200,
   },
   locationContainer: {
     flexDirection: 'row',
