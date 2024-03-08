@@ -1,15 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
-interface Product {
-  id: number;
-  name: string;
-  image: string;
-  price?: number;
-  details: string;
-  category: string;
-}
+import {Product} from '../interfaces/product';
 
 const TrendingItemCard = ({
   id,
@@ -24,13 +16,13 @@ const TrendingItemCard = ({
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{name}</Text>
         <View style={styles.priceCategoryContainer}>
-          <Text style={styles.price}>${price}</Text>
+          <Text style={styles.price}>${price || ' NA'}</Text>
           <Text style={styles.category}>{category}</Text>
         </View>
         <Text style={styles.details}>{details}</Text>
         <View style={styles.infoContainer}>
           <Icon name="heart-outline" size={20} color="#000" />
-          <Text style={styles.address}>123 Main St, Any town</Text>
+          <Text style={styles.address}>XYZ Town</Text>
         </View>
       </View>
       <View style={styles.imageContainer}>
@@ -42,7 +34,7 @@ const TrendingItemCard = ({
 
 const styles = StyleSheet.create({
   card: {
-    width: '55%',
+    width: '35%',
     flexDirection: 'row',
     marginBottom: 10,
     borderWidth: 1,

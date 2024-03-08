@@ -11,7 +11,7 @@ import ShopAllScreen from './screens/ShopAllScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-function MainTabNavigator() {
+function HomeTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -52,10 +52,10 @@ function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <View style={{flex: 1}}>
-        <Stack.Navigator initialRouteName="MainTab">
+        <Stack.Navigator initialRouteName="HomeTab">
           <Stack.Screen
-            name="MainTab"
-            component={MainTabNavigator}
+            name="HomeTab"
+            component={HomeTabNavigator}
             options={{
               headerShown: false,
             }}

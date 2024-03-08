@@ -5,30 +5,26 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import TrendingItemCard from './TrendingItemCart';
-const DATA = [
-  {
-    id: 1,
-    name: 'Laptop',
-    image:
-      'https://cdn.thewirecutter.com/wp-content/media/2023/06/bestlaptops-2048px-9765.jpg',
-    price: 1200,
-    details: 'High-performance laptop with the latest technology.',
-    category: 'electronics',
-  },
-  {
-    id: 2,
-    name: 'House',
-    image:
-      'https://png.pngtree.com/thumb_back/fh260/background/20230618/pngtree-modern-house-visualized-in-stunning-3d-render-image_3630772.jpg',
-    price: 250000,
-    details: 'Spacious 4-bedroom house with a garden.',
-    category: 'properties',
-  },
-];
+import {fetchShopItems} from '../services/shopService';
+import {Product} from '../interfaces/product';
 
 const Trending = () => {
+  const [trendingItems, setTrendingItems] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetchTrendingItemsFromAPI();
+  }, []);
+
+  const fetchTrendingItemsFromAPI = async () => {
+    try {
+      const data = await fetchShopItems();
+      setTrendingItems(data.slice(0, 3));
+    } catch (error) {
+      console.error('Error fetching trending items:', error);
+    }
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -38,7 +34,7 @@ const Trending = () => {
         </TouchableOpacity>
       </View>
       <ScrollView horizontal={true}>
-        {DATA.map(item => (
+        {trendingItems.map(item => (
           <TrendingItemCard key={item.id} {...item} />
         ))}
       </ScrollView>

@@ -30,7 +30,7 @@ const ShopItem: React.FC<ShopItemProps> = ({
     />
     <View style={styles.itemDetails}>
       <Text style={styles.itemName}>{item.name}</Text>
-      <Text style={styles.itemPrice}>${item.price}</Text>
+      <Text style={styles.itemPrice}>${item.price || ' NA'}</Text>
     </View>
     <View style={styles.addButton}>
       {count === 0 ? (
