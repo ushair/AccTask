@@ -11,6 +11,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import MessagesScreen from './screens/MessagesScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -53,8 +54,34 @@ function App(): React.JSX.Element {
           }}
         />
       </Tab.Navigator>
+      <TouchableOpacity style={styles.floatingButton}>
+        <MaterialIcons name="camera-alt" size={20} color="#fff" />
+        <Text style={styles.cameraText}>Post AD</Text>
+      </TouchableOpacity>
     </NavigationContainer>
   );
 }
 
+const styles = StyleSheet.create({
+  floatingButton: {
+    position: 'absolute',
+    flexDirection: 'row',
+    bottom: 30,
+    alignSelf: 'center',
+    backgroundColor: '#FBCF7B',
+    borderRadius: 30,
+    width: 110,
+    height: 40,
+    gap: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 3,
+    zIndex: 1,
+  },
+  cameraText: {
+    color: '#000',
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
+});
 export default App;
