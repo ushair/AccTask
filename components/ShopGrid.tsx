@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 const shopItems = [
@@ -12,11 +13,17 @@ const shopItems = [
 ];
 
 const ShopGrid = () => {
+  const navigation = useNavigation();
+
+  const handleShopAllPress = () => {
+    navigation.navigate('ShopAll');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.shopForText}>Shop for</Text>
-        <TouchableOpacity onPress={() => console.log('See all clicked')}>
+        <TouchableOpacity onPress={handleShopAllPress}>
           <Text style={styles.showAllText}>Show all</Text>
         </TouchableOpacity>
       </View>
